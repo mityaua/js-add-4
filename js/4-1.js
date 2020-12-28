@@ -3,5 +3,7 @@ function makePizza() {
 }
 // Пиши код ниже этой строки
 
-const result = null;
-const pointer = null;
+const result = makePizza();
+const pointer = makePizza;
+
+// Дополни код так, чтобы в переменной result был результат выполнения функции makePizza, а в переменной pointer была ссылка на функцию makePizza.
