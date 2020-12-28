@@ -2,10 +2,10 @@ const pizzaPalace = {
   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
   // Пиши код ниже этой строки
   checkPizza(pizzaName) {
-    return pizzas.includes(pizzaName);
+    return this.pizzas.includes(pizzaName);
   },
   order(pizzaName) {
-    const isPizzaAvailable = checkPizza(pizzaName);
+    const isPizzaAvailable = this.checkPizza(pizzaName);
 
     if (!isPizzaAvailable) {
       return `В ассортименте нет пиццы с названием «${pizzaName}».`;
