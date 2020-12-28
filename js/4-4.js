@@ -1,6 +1,13 @@
 const pizzaPalace = {
   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
-  order(pizzaName) {},
+
+  order(pizzaName, onSuccess, onError) {
+    if (!pizzaPalace.pizzas.includes(pizzaName)) {
+      return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`);
+    }
+
+    return onSuccess(pizzaName);
+  },
 };
 // Пиши код выше этой строки
 
