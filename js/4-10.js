@@ -15,7 +15,9 @@ function logAndInvokeAction(email, action) {
   return action(email);
 }
 
-console.log(logAndInvokeAction('kiwi@mail.uk', service.subscribe));
+console.log(
+  logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service)),
+);
 // Почта kiwi@mail.uk добавлена в рассылку.
 
 console.log(service.mailingList);
@@ -24,7 +26,9 @@ console.log(service.mailingList);
     'ajax@jmail.net', 
     'kiwi@mail.uk']*/
 
-console.log(logAndInvokeAction('poly@hotmail.de', service.unsubscribe));
+console.log(
+  logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service)),
+);
 // Почта poly@hotmail.de удалена из рассылки.
 
 console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
