@@ -9,9 +9,9 @@ function composeMessage(position) {
   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
 }
 
-const messages = ([] = orders.map(order =>
-  console.log(composeMessage.call(order, orders.indexOf(order) + 1)),
-));
+const messages = orders.map(order =>
+  composeMessage.call(order, orders.indexOf(order) + 1),
+);
 
 // Сервису приготовления и доставки еды требуется функция генерации сообщений о статусе заказа.
 
