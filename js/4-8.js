@@ -10,7 +10,7 @@ function composeMessage(position) {
 }
 
 const messages = orders.map((order, index) =>
-  composeMessage.call(order, index + 1),
+  composeMessage.apply(order, [index + 1]),
 );
 
 // Выполни рефакторинг кода так, чтобы функция composeMessage(position) вызывалась методом apply.
